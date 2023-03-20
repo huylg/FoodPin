@@ -7,16 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E4DDC9129C6B18800793C9B /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DDC9029C6B18700793C9B /* Restaurant.swift */; };
+		7EC7C2EF29C6EA940066761A /* BasicTextImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7C2EE29C6EA940066761A /* BasicTextImageRow.swift */; };
+		7EC7C2F129C6EC660066761A /* FullImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7C2F029C6EC660066761A /* FullImageRow.swift */; };
+		7EC7C2F529C7397D0066761A /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7C2F429C7397D0066761A /* ActivityView.swift */; };
+		7EC7C2F729C742DA0066761A /* RestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7C2F629C742D90066761A /* RestaurantDetailView.swift */; };
+		7EC7C2FC29C807920066761A /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7EC7C2FA29C807920066761A /* Nunito-Bold.ttf */; };
+		7EC7C2FD29C807920066761A /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7EC7C2FB29C807920066761A /* Nunito-Regular.ttf */; };
 		7EF0601D29C5B8D4009E080E /* FoodPinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF0601C29C5B8D4009E080E /* FoodPinApp.swift */; };
-		7EF0601F29C5B8D4009E080E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF0601E29C5B8D4009E080E /* ContentView.swift */; };
+		7EF0601F29C5B8D4009E080E /* RestaurantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF0601E29C5B8D4009E080E /* RestaurantListView.swift */; };
 		7EF0602129C5B8D8009E080E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EF0602029C5B8D8009E080E /* Assets.xcassets */; };
 		7EF0602429C5B8D8009E080E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EF0602329C5B8D8009E080E /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E4DDC9029C6B18700793C9B /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		7EC7C2EE29C6EA940066761A /* BasicTextImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTextImageRow.swift; sourceTree = "<group>"; };
+		7EC7C2F029C6EC660066761A /* FullImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageRow.swift; sourceTree = "<group>"; };
+		7EC7C2F429C7397D0066761A /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		7EC7C2F629C742D90066761A /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailView.swift; sourceTree = "<group>"; };
+		7EC7C2FA29C807920066761A /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		7EC7C2FB29C807920066761A /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		7EF0601929C5B8D4009E080E /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EF0601C29C5B8D4009E080E /* FoodPinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPinApp.swift; sourceTree = "<group>"; };
-		7EF0601E29C5B8D4009E080E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7EF0601E29C5B8D4009E080E /* RestaurantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListView.swift; sourceTree = "<group>"; };
 		7EF0602029C5B8D8009E080E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7EF0602329C5B8D8009E080E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,6 +46,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7EC7C2F229C6ECDD0066761A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7EF0601E29C5B8D4009E080E /* RestaurantListView.swift */,
+				7EC7C2F629C742D90066761A /* RestaurantDetailView.swift */,
+				7EC7C2F429C7397D0066761A /* ActivityView.swift */,
+				7EC7C2EE29C6EA940066761A /* BasicTextImageRow.swift */,
+				7EC7C2F029C6EC660066761A /* FullImageRow.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7EC7C2F329C6ECF30066761A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7E4DDC9029C6B18700793C9B /* Restaurant.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7EC7C2F829C807530066761A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				7EC7C2F929C8075F0066761A /* Font */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		7EC7C2F929C8075F0066761A /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				7EC7C2FA29C807920066761A /* Nunito-Bold.ttf */,
+				7EC7C2FB29C807920066761A /* Nunito-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		7EF0601029C5B8D4009E080E = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +102,10 @@
 		7EF0601B29C5B8D4009E080E /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
+				7EC7C2F829C807530066761A /* Resource */,
+				7EC7C2F329C6ECF30066761A /* Model */,
+				7EC7C2F229C6ECDD0066761A /* View */,
 				7EF0601C29C5B8D4009E080E /* FoodPinApp.swift */,
-				7EF0601E29C5B8D4009E080E /* ContentView.swift */,
 				7EF0602029C5B8D8009E080E /* Assets.xcassets */,
 				7EF0602229C5B8D8009E080E /* Preview Content */,
 			);
@@ -126,6 +179,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EF0602429C5B8D8009E080E /* Preview Assets.xcassets in Resources */,
+				7EC7C2FC29C807920066761A /* Nunito-Bold.ttf in Resources */,
+				7EC7C2FD29C807920066761A /* Nunito-Regular.ttf in Resources */,
 				7EF0602129C5B8D8009E080E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +192,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EF0601F29C5B8D4009E080E /* ContentView.swift in Sources */,
+				7EC7C2EF29C6EA940066761A /* BasicTextImageRow.swift in Sources */,
+				7EC7C2F729C742DA0066761A /* RestaurantDetailView.swift in Sources */,
+				7EF0601F29C5B8D4009E080E /* RestaurantListView.swift in Sources */,
+				7EC7C2F129C6EC660066761A /* FullImageRow.swift in Sources */,
 				7EF0601D29C5B8D4009E080E /* FoodPinApp.swift in Sources */,
+				7E4DDC9129C6B18800793C9B /* Restaurant.swift in Sources */,
+				7EC7C2F529C7397D0066761A /* ActivityView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
