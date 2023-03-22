@@ -48,8 +48,8 @@ struct RestaurantListView: View {
             }
             .listStyle(.plain)
             .listRowSeparator(.hidden)
+            .navigationTitle("FoodPin")
         }
-        .navigationTitle("FoodPin")
         .tint(.white)
     }
 }

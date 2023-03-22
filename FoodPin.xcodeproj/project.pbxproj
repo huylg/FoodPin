@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7E4DDC9129C6B18800793C9B /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DDC9029C6B18700793C9B /* Restaurant.swift */; };
+		7E88ED5D29CB3738007A5B9A /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E88ED5C29CB3738007A5B9A /* UIColor+Ext.swift */; };
 		7EC7C2EF29C6EA940066761A /* BasicTextImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7C2EE29C6EA940066761A /* BasicTextImageRow.swift */; };
 		7EC7C2F129C6EC660066761A /* FullImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7C2F029C6EC660066761A /* FullImageRow.swift */; };
 		7EC7C2F529C7397D0066761A /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7C2F429C7397D0066761A /* ActivityView.swift */; };
@@ -22,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		7E4DDC9029C6B18700793C9B /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		7E88ED5C29CB3738007A5B9A /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		7E9F45BE29C8973500B674DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7EC7C2EE29C6EA940066761A /* BasicTextImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTextImageRow.swift; sourceTree = "<group>"; };
 		7EC7C2F029C6EC660066761A /* FullImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageRow.swift; sourceTree = "<group>"; };
 		7EC7C2F429C7397D0066761A /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
@@ -46,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E88ED5B29CB36F9007A5B9A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7E88ED5C29CB3738007A5B9A /* UIColor+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		7EC7C2F229C6ECDD0066761A /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +113,8 @@
 		7EF0601B29C5B8D4009E080E /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
+				7E88ED5B29CB36F9007A5B9A /* Extensions */,
+				7E9F45BE29C8973500B674DE /* Info.plist */,
 				7EC7C2F829C807530066761A /* Resource */,
 				7EC7C2F329C6ECF30066761A /* Model */,
 				7EC7C2F229C6ECDD0066761A /* View */,
@@ -197,6 +210,7 @@
 				7EF0601F29C5B8D4009E080E /* RestaurantListView.swift in Sources */,
 				7EC7C2F129C6EC660066761A /* FullImageRow.swift in Sources */,
 				7EF0601D29C5B8D4009E080E /* FoodPinApp.swift in Sources */,
+				7E88ED5D29CB3738007A5B9A /* UIColor+Ext.swift in Sources */,
 				7E4DDC9129C6B18800793C9B /* Restaurant.swift in Sources */,
 				7EC7C2F529C7397D0066761A /* ActivityView.swift in Sources */,
 			);
@@ -330,6 +344,7 @@
 				DEVELOPMENT_TEAM = 7G468VWX5B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FoodPin/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -359,6 +374,7 @@
 				DEVELOPMENT_TEAM = 7G468VWX5B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FoodPin/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
