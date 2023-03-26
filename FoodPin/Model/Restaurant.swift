@@ -6,17 +6,20 @@
 //
 
 import Foundation
+import Combine
 
-struct Restaurant {
-    var name: String
-    var type: String
-    var location: String
-    var phone: String
-    var description: String
-    var image: String
-    var isFavorite: Bool
+class Restaurant: ObservableObject {
 
-    init(name: String, type: String, location: String, phone: String, description: String, image: String, isFavorite: Bool) {
+    @Published var name: String
+    @Published var type: String
+    @Published var location: String
+    @Published var phone: String
+    @Published var description: String
+    @Published var image: String
+    @Published var isFavorite: Bool = false
+    @Published var rating: Rating?
+
+    init(name: String, type: String, location: String, phone: String, description: String, image: String, isFavorite: Bool, rating: Rating?) {
         self.image = image
         self.name = name
         self.location = location
@@ -24,10 +27,31 @@ struct Restaurant {
         self.description = description
         self.type = type
         self.isFavorite = isFavorite
+        self.rating = rating
     }
     
-    init() {
-        self.init(name: "", type: "", location: "", phone: "", description: "", image: "", isFavorite: false)
+    enum Rating: String, CaseIterable {
+        case awesome = "awesome"
+        case good = "good"
+        case okay = "okay"
+        case bad = "bad"
+        case terrible = "terrible"
+        
+        var image: String {
+            switch self {
+            case .awesome:
+                return "love"
+            case .good:
+                return "cool"
+            case .okay:
+                return "happy"
+            case .bad:
+                return "sad"
+            case .terrible:
+                return "angry"
+            }
+        }
     }
     
 }
+

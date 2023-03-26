@@ -12,6 +12,8 @@ struct RestaurantDetailView: View {
     
     @Environment(\.dismiss) var dismiss
     
+    @State private var showReview = false
+    
     var body: some View {
         ScrollView(content: {
             VStack(alignment: .leading, content: {
@@ -29,18 +31,30 @@ struct RestaurantDetailView: View {
                                 .foregroundColor( restaurant.isFavorite ? .yellow : .white)
                                 .padding(.top, 40)
                                 
-                            VStack(alignment: .leading, spacing: 5) {
-                                Text(restaurant.name)
-                                    .font(.custom("Nunito-Regular", size: 35, relativeTo: .largeTitle))
-                                    .bold()
-                                Text(restaurant.type)
-                                    .font(.system(.headline, design: .rounded))
-                                    .padding(.all, 5)
-                                    .backgroundStyle(.black)
-                            }
-                            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .bottomLeading)
-                            .foregroundColor(.white)
-                            .padding()
+                            HStack(alignment: .bottom, content: {
+                                VStack(alignment: .leading, spacing: 5) {
+                                    Text(restaurant.name)
+                                        .font(.custom("Nunito-Regular", size: 35, relativeTo: .largeTitle))
+                                        .bold()
+                                    Text(restaurant.type)
+                                        .font(.system(.headline, design: .rounded))
+                                        .padding(.all, 5)
+                                        .backgroundStyle(.black)
+                                }
+                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .bottomLeading)
+                                .foregroundColor(.white)
+                                .padding()
+                                
+                                if let rating = restaurant.rating {
+                                    Image(rating.image)
+                                        .resizable()
+                                        .frame(width: 60, height: 60)
+                                        .padding([.bottom, .trailing])
+                                        .transition(.scale)
+                                }
+                            
+                            })
+                            .animation(.spring(response: 0.2, dampingFraction: 0.3, blendDuration: 0.3), value: restaurant.rating)
                         }
                         
                     }
@@ -62,28 +76,64 @@ struct RestaurantDetailView: View {
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
             }
             .padding(.horizontal)
+            
+            NavigationLink(destination: {
+                MapView(location: restaurant.location)
+                    .edgesIgnoringSafeArea(.all)
+            }, label: {
+                MapView(location: restaurant.location)
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .frame(height: 200)
+                    .cornerRadius(20)
+                    .padding()
+            })
+            
+            Button {
+                showReview.toggle()
+            } label: {
+                Text("Rate it")
+                    .font(.system(.headline, design: .rounded))
+                    .frame(minWidth: 0, maxWidth: .infinity)
+            }
+            .tint(Color("NavigationBarTitle"))
+            .buttonStyle(.borderedProminent)
+            .buttonBorderShape(.roundedRectangle(radius: 25))
+            .controlSize(.large)
+            .padding(.horizontal)
+            .padding(.bottom, 20)
+
+            
+            
         })
-        .ignoresSafeArea()
-        .navigationBarBackButtonHidden()
+        .navigationBarBackButtonHidden(true)
         .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
+            showReview
+            ? nil
+            : ToolbarItem(placement: .navigationBarLeading) {
                 Button {
                     dismiss()
                 } label: {
                     Text("\(Image(systemName: "chevron.left"))")
                 }
-
+                
             }
         }
+        .ignoresSafeArea()
+        .overlay(content: {
+            showReview ? ZStack {
+                ReviewView(restaurant: restaurant, isDisplay: $showReview)
+            } : nil
+        })
     }
 }
 
 struct RestaurantDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        let restaurant = Restaurant(name: "Coffee House", type: "Coffee", location: "Vietnam", phone: " 232-923423 ", description: " Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning , and close at 9 PM. We offer espresso and espresso based drink, such as c apuccino, cafe latte, piccolo and many more. Come over and enjoy a great m eal " , image: "cafedeadend", isFavorite: true)
+        let restaurant = Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", location: "Hong Kong", phone: "323-923423", description: " Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal. ", image: "cafedeadend", isFavorite: false, rating: nil)
         NavigationView(content: {
             RestaurantDetailView(restaurant: restaurant)
         })
+//        .environment(\.dynamicTypeSize, .xxxLarge)
         .tint(.white)
         
     }
